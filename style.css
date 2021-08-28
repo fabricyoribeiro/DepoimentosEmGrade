@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+html, body {
+    margin: 20px;
+    height: calc(100% - 40px);
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.branco-forte {
+    color: hsl(210, 46%, 95%);
+}
+
+.branco-fraco {
+    line-height: 1.2em;
+    color: hsl(0, 0%, 81%);
+}
+
+.preto-forte {
+    color: hsl(217, 19%, 35%);
+}
+
+.preto-fraco {
+    line-height: 1.2em;
+    color: hsla(217, 39%, 35%, 0.836);
+}
+
+header {
+    display: flex;
+    box-sizing: border-box;
+    height: 38.2px;
+    display: flex;
+    align-items: center;
+}
+
+img {
+    height: 100%;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: solid 3px hsl(263, 70%, 63%);
+}
+
+body > div {
+    position: relative;
+    border-radius: 7px;
+    padding: 30px;
+    box-shadow: 20px 11px 20px 0px rgba(0, 0, 0, 0.26);
+}
+
+.d1 {
+    background-color: hsl(263, 55%, 52%);
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-area: primeiro;
+}
+
+.d2 {
+    background-color: hsl(217, 19%, 35%);
+    grid-area: segundo;
+}
+
+.d3 {
+    background-color: hsl(0, 0%, 100%);
+    grid-row-end: span 2;
+    grid-area: terceiro;
+}
+
+.d4 {
+    background-color: hsl(0, 0%, 100%);
+    grid-area: quarto;
+}
+
+.d5 {
+    background-color: hsl(219, 29%, 14%);
+    grid-column-end: span 2;
+    grid-area: quinto;
+}
+
+body {
+    display: grid;
+    gap: 25px;
+    background-color: lightgrey;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        'primeiro primeiro segundo terceiro'
+        'quarto quinto quinto terceiro';
+}
+
+@media (max-width: 675px) {
+    html, body {
+        display: flex;
+        flex-direction: column;
+    }
+    div {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1222px) {
+
+    body {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "primeiro primeiro segundo"
+            "quarto quinto quinto"
+            "terceiro terceiro terceiro";
+    }
+}
+
+@media(max-width: 800px) {
+    body {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+            'primeiro primeiro'
+            'segundo quarto'
+            'quinto terceiro';
+    }
+}
+
+@media(max-width: 540px) {
+    body {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 'primeiro' 'segundo' 'terceiro' 'quarto' 'quinto';
+    }
+}
